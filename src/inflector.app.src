@@ -1,0 +1,12 @@
+{application, inflector,
+ [
+  {description, "inflector: Rails Style String Inflection For Erlang"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { inflector, []}},
+  {env, []}
+ ]}.
