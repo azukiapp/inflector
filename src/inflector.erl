@@ -31,7 +31,9 @@
 	 capitalize/1, humanize/1, underscore/1, dasherize/1, tableize/1, moduleize/1,
 	 foreign_key/1, ordinalize/1, cached_re/2]).
 
+-ifdef(TEST).
 -include_lib("eunit/include/eunit.hrl").
+-endif.
 
 %% External API
 singularize(Word) ->
@@ -234,6 +236,8 @@ uncountables() ->
 
 
 %% Tests
+-ifdef(TEST).
+
 replace_test() ->
     SampleList = [ {"abc", "def"},
 		   {"a(b|c)d", "e\\1e"},
@@ -313,3 +317,5 @@ cached_re_test() ->
     true = (RE1 =:= RE1_1),
     false = (RE2 =:= RE1), 
     "QQQ?UUU" == re_replace( "QQQAbcdefgUUU", RE1_1, "?" ).
+
+-endif.
